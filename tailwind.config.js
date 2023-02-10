@@ -8,7 +8,10 @@ module.exports = {
         lora: ["Lora", "serif"],
         roboto: ["Roboto", "sans-serif"],
         qwitch: ["Qwitcher Grypen", "cursive"],
-       },
+      },
+      transitionProperty: {
+        'width': 'width'
+      },
     },
   },
   plugins: [

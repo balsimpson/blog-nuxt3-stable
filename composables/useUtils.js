@@ -1,16 +1,25 @@
-export const fuzzy = (items, key) => {
-  //let searchByCategory = fuzzy(list, 'category');
-
+export const fuzzy = (items, key = "") => {
   return (query) => {
     let words = query.toLowerCase().split(" ");
 
-    return items.filter((item) => {
-      let normalizedTerm = item[key].toLowerCase();
-
-      return words.every((word) => {
-        return normalizedTerm.indexOf(word) > -1;
+    if (key) {
+      return items.filter((item) => {
+        let normalizedTerm = item[key].toLowerCase();
+  
+        return words.every((word) => {
+          return normalizedTerm.indexOf(word) > -1;
+        });
       });
-    });
+    } else {
+      return items.filter((item) => {
+        let normalizedTerm = item.toLowerCase();
+  
+        return words.every((word) => {
+          return normalizedTerm.indexOf(word) > -1;
+        });
+      });
+
+    }
   };
 };
 
