@@ -4,18 +4,18 @@ import { getDocsFromFirestore, getDocFromFirestore, getDocFromFirestoreWithSlug,
 
 export default defineEventHandler(async (event) => {
   // const config = useRuntimeConfig()
-  const body = await readBody(event)
+  // const body = await readBody(event)
   const query = getQuery(event)
 
-  // const config = useRuntimeConfig();
+  const config = useRuntimeConfig();
 
-  // const firebaseConfig = {
-  //   apiKey: config.private.FIREBASE_API_KEY,
-  //   projectId: config.private.FIREBASE_PROJECT_ID,
-  // };
+  const firebaseConfig = {
+    apiKey: config.private.FIREBASE_API_KEY,
+    projectId: config.private.FIREBASE_PROJECT_ID,
+  };
 
-  // // Initialize Firebase
-  // const app = initializeApp(firebaseConfig);
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
   
   // if (query.slug) {
 
@@ -27,7 +27,7 @@ export default defineEventHandler(async (event) => {
 
   // return await getDocsFromFirestore("posts")
 
-  console.log("event", body.title)
+  // console.log("event", body.title)
   // let res = JSON.parse(body)
   // console.log("event", res)
   // console.log("event", res.title)
