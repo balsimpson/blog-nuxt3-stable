@@ -13,7 +13,7 @@
 
 			<div v-if="posts && posts.length" class="h-full my-3 space-y-3 overflow-y-scroll scroller snap-mandatory snap-y">
 
-				<div v-for="post in posts" class="border rounded snap-start">
+				<div v-for="post in posts" class="border rounded snap-start bg-stone-800">
 
 					<div class="p-4">
 						<NuxtLink :to="`/post/${post.slug}`" class="">
